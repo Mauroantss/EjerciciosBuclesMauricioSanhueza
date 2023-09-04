@@ -25,7 +25,7 @@ if (numeroIngresado2 >= 1 && numeroIngresado2 <= 10) {
   
   // Bucle para multiplicar el numero x hasta 10
   for (let i = 1; i <= 10; i++) {
-    let resultado = numeroIngresado2 * i;
+    let resultado = numeroIngresado2 * i
     console.log(`${numeroIngresado2} x ${i} = ${resultado}`)
   }
   // En caso de que el usuario no ingrese un numero o caracter dentro del rango ingresado
@@ -36,27 +36,28 @@ if (numeroIngresado2 >= 1 && numeroIngresado2 <= 10) {
 
 console.log("---- Ingresar numeros y sumar; 0 cierra----")
 
-console.log("---- Mismo método do while ----")
+console.log("---- Metodo while ----")
+// Creo constante para sumar y determinar que desde comienzo es verdadero, despues el bucle hara el falso al hacer un ===
+let sumar = 0;
+let continuar = true;
 
-let sumar = 0
-let continuar = true
-
-do {
-  const entrada = prompt("Ejer 1 Ingrese un número (ingrese 0 para salir):")
-  const numero = parseFloat(entrada)
+while (continuar) {
+    // solicito desde el prompt que el usuario ingrese los datos, uso parseFloat para convertir un string a un numero
+  const entrada = prompt("Ejer 1 Ingrese un número (ingrese 0 para salir):");
+  const numero = parseFloat(entrada);
 
   if (isNaN(numero)) {
-    alert("Por favor, ingrese un número válido.")
+       // Condicional si es que el numero ingresado no es un numero
+    alert("Por favor, ingrese un número válido.");
   } else {
     sumar += numero;
     if (numero === 0) {
-      continuar = false
+      continuar = false;
     }
   }
-} while (continuar)
+}
 
-console.log(`La suma de los números ingresados es: ${sumar}`)
-
+console.log(`La suma de los números ingresados es: ${sumar}`);
 
 
 console.log("---- Mismo metodo do while----")
