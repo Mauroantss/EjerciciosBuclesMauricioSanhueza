@@ -204,19 +204,22 @@ console.log("---suma pares e impares ----")
 let sumaPares = 0
 let sumaImpares = 0
 let numer
+let continua = true 
 
-while (true) {
-  const entrada = prompt("Ingresa un número (ingresa 0 para salir):");
+while (continua) {
+  const entrada = prompt("Ingresa un número (ingresa 0 para salir):")
   numer = parseInt(entrada)
 
   if (isNaN(numer)) {
     alert("Por favor, ingresa un número válido.")
-  } else if (numer === 0) {
-    break; // Salir del bucle cuando se ingresa 0
-  } else if (numer % 2 === 0) {
-    sumaPares += numer; // Sumar números pares
   } else {
-    sumaImpares += numer; // Sumar números impares
+    if (numer === 0) {
+      continua = false 
+    } else if (numer % 2 === 0) {
+      sumaPares += numer 
+    } else {
+      sumaImpares += numer 
+    }
   }
 }
 
@@ -229,11 +232,11 @@ console.log("---Numero mas grande de array ----")
 
 
 const num = [28,29,25,19,18,8,15,69,11,13];
-let numeroMasGrande = num[0]// Inicializamos con el primer número
+let numeroMasGrande = num[0]
 
 for (let i = 1; i < num.length; i++) {
   if (num[i] > numeroMasGrande) {
-    numeroMasGrande = num[i] // Si encontramos un número más grande, lo actualizamos
+    numeroMasGrande = num[i]
   }
 }
 
